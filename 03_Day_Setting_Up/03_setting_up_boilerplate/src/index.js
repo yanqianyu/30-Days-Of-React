@@ -2,7 +2,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // To get the root element from the HTML document
-import asabenehImage from './images/asabeneh.jpg'
+
+import images from './imgs';
+import Subs from './subscribe';
+import userCard from './card';
 
 // to import the doSomeMath from the math.js with or without extension
 import doSomeMath from './math.js'
@@ -66,11 +69,6 @@ const personAge = (
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
-const user = (
-  <div>
-    <img src={asabenehImage} alt='asabeneh image' />
-  </div>
-)
 
 // JSX element, main
 const main = (
@@ -86,28 +84,19 @@ const main = (
       <ul>{techsFormatted}</ul>
       {result}
       {personAge}
-      {user}
     </div>
   </main>
 )
 
-const copyRight = 'Copyright 2020'
-
-// JSX element, footer
-const footer = (
-  <footer>
-    <div className='footer-wrapper'>
-      <p>{copyRight}</p>
-    </div>
-  </footer>
-)
 
 // JSX element, app
 const app = (
   <div className='app'>
     {header}
     {main}
-    {footer}
+    {images}
+    {Subs}
+    {userCard}
   </div>
 )
 
