@@ -2,6 +2,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import asabenehImage from './images/asabeneh.jpg'
+import Images from './Components/Images';
+import Subscribe from './Components/Subscribe';
 
 const hexaColor = () => {
   let str = '0123456789abcdef'
@@ -18,8 +20,8 @@ const HexaColor = () => {
   const styles = {
     height: '100px',
     display: 'flex',
-    'justify-content': 'center',
-    'align-items': 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
     fontFamily: 'Montserrat',
     margin: '2px auto',
     borderRadius: '5px',
@@ -101,6 +103,8 @@ const App = () => (
   <div className='app'>
     <Header />
     <Main />
+    <Images/>
+    <Subscribe/>
     <Footer />
   </div>
 )
