@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days Of React Challenge</title>
+    <style>
+        .mainWrapper {
+        padding: 10px;
+        margin: 2px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const user = {
+          name: 'YanQianyu',
+          country: 'China',
+          gender: 'female',
+          email: 'xxxx@qq.com',
+          phone: 'XXXXX'
+      };
+      const main = (
+            <div className="mainWrapper">
+                <h1>{user.name}</h1>
+                <p>{user.country}</p>
+                <p>{user.gender}</p>
+                <p>{user.email}</p>
+                <p>{user.phone}</p>
+            </div>
+      )
+
+      const footer = (
+          <footer style={{border: '2px solid gray'}}>This is a footer.</footer>
+      )
+
+      const app = (
+          <div className='app'>
+            {main}
+            {footer}
+          </div>
+      )
+
+      const rootEle = document.querySelector('.root');
+      ReactDOM.render(app, rootEle);
+    </script>
+  </body>
+</html>
