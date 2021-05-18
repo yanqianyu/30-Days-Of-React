@@ -51,6 +51,7 @@ class Main extends React.Component {
       message,
       country,
       user,
+      changeBg
     } = this.props
     console.log(message)
 
@@ -77,6 +78,11 @@ class Main extends React.Component {
             <Button
               text='Greet People'
               onClick={greetPeople}
+              style={buttonStyles}
+            />{' '}
+            <Button
+              text='Change backgroundColor'
+              onClick={changeBg}
               style={buttonStyles}
             />
             {!loggedIn && (
