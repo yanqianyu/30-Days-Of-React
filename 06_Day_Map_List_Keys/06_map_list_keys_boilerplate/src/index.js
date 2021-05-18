@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import NumBlock from '../src/Components/NumBlock';
+import Popu from '../src/Components/Population';
+import {tenHighestPopulation} from '../src/data/ten_most_highest_populations';
 
 // importing data
 
@@ -80,6 +82,17 @@ const Block = () => {
   )
 }
 
+const CountryPopu = () => {
+  const block = tenHighestPopulation.map((e, index) => 
+    <Popu country={e.country} number={e.population}></Popu>
+  )
+  return (
+    <div>
+      {block}
+    </div>
+  )
+}
+
 // The App, or the parent or the container component
 // Functional Component
 const App = () => {
@@ -89,6 +102,7 @@ const App = () => {
         <h1>Countries List</h1>
         <Countries countries={countries} />
         <Block/>
+        <CountryPopu/>
       </div>
     </div>
   )
