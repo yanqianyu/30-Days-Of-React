@@ -4,6 +4,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import asabenehImage from './images/asabeneh.jpg'
 
+import Country from './Country';
+
 // Fuction to show month date year
 
 // User Card Component
@@ -106,6 +108,13 @@ class Main extends React.Component {
             onClick={this.props.handleTime}
             style={buttonStyles}
           />
+          <Button
+            text='Change Background'
+            onClick={this.props.changeBackground}
+            style={buttonStyles}
+          />
+
+          <Country/>
         </div>
       </main>
     )
@@ -130,6 +139,11 @@ class Footer extends React.Component {
 }
 
 class App extends React.Component {
+  state = {
+    styles: {
+      backgroundColor: 'white'
+    }
+  }
   showDate = (time) => {
     const months = [
       'January',
@@ -157,6 +171,11 @@ class App extends React.Component {
   greetPeople = () => {
     alert('Welcome to 30 Days Of React Challenge, 2020')
   }
+  changeBackground = () => {
+    this.state.styles.backgroundColor === 'white' ? 
+      this.setState({styles: {backgroundColor: 'gray'}}) :
+      this.setState({styles: {backgroundColor: 'white'}})
+  }
   render() {
     const data = {
       welcome: 'Welcome to 30 Days Of React',
@@ -174,13 +193,14 @@ class App extends React.Component {
     const user = { ...data.author, image: asabenehImage }
 
     return (
-      <div className='app'>
-        <Header data={data} />
+      <div className='app' style={this.state.styles}>
+        <Header data={data}/>
         <Main
           user={user}
           techs={techs}
           handleTime={this.handleTime}
           greetPeople={this.greetPeople}
+          changeBackground={this.changeBackground}
         />
 
         <Footer date={new Date()} />
