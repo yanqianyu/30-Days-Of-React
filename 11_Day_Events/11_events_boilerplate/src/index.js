@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
+import Rectangle from '../src/Rectangle';
+
 class App extends Component {
   state = {
     firstName: '',
@@ -78,6 +80,8 @@ class App extends Component {
             <input type='submit' value='Submit' />
           </div>
         </form>
+
+        <Rectangle/>
       </div>
     )
   }
