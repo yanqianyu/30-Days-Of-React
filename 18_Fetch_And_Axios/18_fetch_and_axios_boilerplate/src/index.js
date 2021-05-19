@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 
+import Cat from '../src/Cat';
+
 const Country = ({ country: { name, flag, population } }) => {
   return (
     <div className='country'>
@@ -53,6 +55,7 @@ class App extends Component {
             ))}
           </div>
         </div>
+        <Cat/>
       </div>
     )
   }
